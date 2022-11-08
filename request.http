@@ -1,0 +1,63 @@
+// Students requests
+###
+GET http://localhost:9000/students HTTP/1.1
+
+###
+POST http://localhost:9000/students HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juliana Carvajal G",
+    "email": "julianag@gmail.com",
+    "year": "2020",
+    "age": "22",
+    "gender": "F"
+}
+
+###
+DELETE http://localhost:9000/students/2 HTTP/1.1
+
+###
+PUT http://localhost:9000/students/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juliana Carvajal Guerra",
+    "email": "julianag@gmail.com",
+    "year": "2020",
+    "age": "22",
+    "gender": "F"
+}
+
+
+// ---------------------------------- //
+
+// Activities requests
+###
+GET http://localhost:9000/activities HTTP/1.1
+
+###
+POST http://localhost:9000/activities HTTP/1.1
+Content-Type: application/json
+
+{
+    "studentid": "3",
+    "value": "10",
+    "date": "2022-05-21",
+    "activity": "1"
+}
+
+###
+DELETE http://localhost:9000/activities/1 HTTP/1.1
+
+###
+PUT http://localhost:9000/activities/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juliana Carvajal Guerra",
+    "email": "julianag@gmail.com",
+    "year": "2020",
+    "age": "22",
+    "gender": "F"
+}
