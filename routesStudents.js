@@ -2,6 +2,8 @@ const express = require('express')
 const routes = express.Router()
 
 // Routes
+
+// Get all students: 
 routes.get('/', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
@@ -13,6 +15,7 @@ routes.get('/', (req, res) => {
     })
 })
 
+// Add new student:
 routes.post('/', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
@@ -24,6 +27,7 @@ routes.post('/', (req, res) => {
     })
 })
 
+// Delete specific student:
 routes.delete('/:id', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
@@ -35,6 +39,7 @@ routes.delete('/:id', (req, res) => {
     })
 })
 
+// Update specific student:
 routes.put('/:id', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
