@@ -26,7 +26,7 @@ app.use(cors());
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome to my API");
+  res.send("Welcome to SLECU API");
 });
 app.use("/students", routesStudents);
 app.use("/activities", routesActivities);
