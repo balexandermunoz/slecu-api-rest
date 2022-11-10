@@ -33,7 +33,7 @@ routes.delete('/:id', (req, res) => {
         if (err) return res.send(err)
 
         conn.query('DELETE FROM students WHERE id = ?', [req.params.id], (err, rows) => {
-            if (err) return res.send(err)
+            if (err) throw new Error("UPS!")
             res.send('Student deleted!')
         })
     })
