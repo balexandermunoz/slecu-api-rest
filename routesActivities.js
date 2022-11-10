@@ -30,8 +30,8 @@ routes.get('/:id', (req, res) => {
             rows = rows.map(row =>{
                 let currDate = new Date(row.date)
                 let year = currDate.getFullYear()
-                let month = ("0" + currDate.getDate()).slice(-2)
-                let day = ("0" + (currDate.getMonth() + 1)).slice(-2)
+                let month = ("0" + (currDate.getMonth() + 1)).slice(-2)
+                let day = ("0" + currDate.getDate()).slice(-2)
                 return { ...row, date: `${year}-${month}-${day}`};
             })
             res.json(rows)
