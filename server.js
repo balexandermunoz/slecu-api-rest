@@ -5,6 +5,7 @@ const cors = require('cors')
 
 const routesStudents = require('./routesStudents')
 const routesActivities = require('./routesActivities')
+const routesStats = require('./routesStats')
 
 const app = express()
 app.set('port', process.env.PORT || 9000)
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 })
 app.use('/students', routesStudents)
 app.use('/activities', routesActivities)
+app.use('/stats', routesStats)
 
 // Server running 
 app.listen(app.get('port'), () => {

@@ -1,4 +1,4 @@
-// Students requests
+//---- Students requests ----//
 ###
 GET http://localhost:9000/students HTTP/1.1
 
@@ -30,9 +30,8 @@ Content-Type: application/json
 }
 
 
-// ---------------------------------- //
+// -------------- Activities requests ----------------- //
 
-// Activities requests
 ###
 GET http://localhost:9000/activities HTTP/1.1
 
@@ -64,3 +63,12 @@ Content-Type: application/json
     "age": "22",
     "gender": "F"
 }
+
+
+//------- Stats requests -----//
+
+###
+GET http://localhost:9000/stats HTTP/1.1
+
+###
+GET http://localhost:9000/stats/avg HTTP/1.1
