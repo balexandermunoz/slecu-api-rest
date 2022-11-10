@@ -7,14 +7,16 @@ const routesStudents = require("./routesStudents");
 const routesActivities = require("./routesActivities");
 const routesStats = require("./routesStats");
 
+// AWS port 3306
+// admin .J853brayan777 
 const app = express();
 app.set("port", process.env.PORT || 9000);
 const dbOptions = {
-  host: "localhost",
+  host: "slecu-db.cqauonprn9tl.us-east-1.rds.amazonaws.com",
   port: 3306, // Default port
-  user: "root",
+  user: "admin",
   password: "J853brayan777",
-  database: "slecudb",
+  database: "slecu-db",
 };
 
 // Middelwares
