@@ -1,54 +1,62 @@
-const express = require('express')
-const routes = express.Router()
+const express = require("express");
+const routes = express.Router();
 
 // Routes
 
-// Get all students: 
-routes.get('/', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
+// Get all students:
+routes.get("/", (req, res) => {
+  req.getConnection((err, conn) => {
+    if (err) return res.send(err);
 
-        conn.query('SELECT * FROM students', (err, rows) => {
-            if (err) return res.send(err)
-            res.json(rows)
-        })
-    })
-})
+    conn.query("SELECT * FROM students", (err, rows) => {
+      if (err) return res.send(err);
+      res.json(rows);
+    });
+  });
+});
 
 // Add new student:
-routes.post('/', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
+routes.post("/", (req, res) => {
+  req.getConnection((err, conn) => {
+    if (err) return res.send(err);
 
-        conn.query('INSERT INTO students set ?', [req.body], (err, rows) => {
-            if (err) return res.send(err)
-            res.send('Student added!')
-        })
-    })
-})
+    conn.query("INSERT INTO students set ?", [req.body], (err, rows) => {
+      if (err) return res.send(err);
+      res.send("Student added!");
+    });
+  });
+});
 
 // Delete specific student:
-routes.delete('/:id', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
+routes.delete("/:id", (req, res) => {
+  req.getConnection((err, conn) => {
+    if (err) return res.send(err);
 
-        conn.query('DELETE FROM students WHERE id = ?', [req.params.id], (err, rows) => {
-            if (err) throw new Error("UPS!")
-            res.send('Student deleted!')
-        })
-    })
-})
+    conn.query(
+      "DELETE FROM students WHERE id = ?",
+      [req.params.id],
+      (err, rows) => {
+        if (err) throw new Error("UPS!");
+        res.send("Student deleted!");
+      }
+    );
+  });
+});
 
 // Update specific student:
-routes.put('/:id', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
+routes.put("/:id", (req, res) => {
+  req.getConnection((err, conn) => {
+    if (err) return res.send(err);
 
-        conn.query('UPDATE students set ? WHERE id = ?', [req.body, req.params.id], (err, rows) => {
-            if (err) return res.send(err)
-            res.send('Student updated!')
-        })
-    })
-})
+    conn.query(
+      "UPDATE students set ? WHERE id = ?",
+      [req.body, req.params.id],
+      (err, rows) => {
+        if (err) return res.send(err);
+        res.send("Student updated!");
+      }
+    );
+  });
+});
 
-module.exports = routes
+module.exports = routes;
